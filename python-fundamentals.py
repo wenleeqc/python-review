@@ -83,6 +83,7 @@ print(0*'goodbye')
 # supports negative indices
 # dynamically sized
 # are mutable
+# can contain any kind of object
 
 # new list
 newList = list() # constructor
@@ -105,9 +106,13 @@ print(ltemp) # ['1']
 # l.append(x) append to end of list
 ltemp.append(3)
 print(ltemp)
-# l.extend(t) appends a new list t to the end
+ltemp.append('good bye')
+print(ltemp)
+# l.extend(t) adds all elements of a sequence t to the end
 ltemp.extend([5,3])
-print(ltemp) # ['1', 3, 5, 3]
+print(ltemp) # ['1', 3, 'good bye', 5, 3]
+ltemp.extend('hello')
+print(ltemp) # ['1', 3, 'good bye', 5, 3, 'h', 'e', 'l', 'l', 'o'] because strings are sequences, each character is considered an discrete element
 # counts occurrences of x in list
 print(ltemp.count(3)) # 2
 # l.index(x,start,stop) returns index of first occurrence of x
@@ -275,6 +280,19 @@ print('count:', sys.getrefcount(777))
 # eval() evaluates to integer or float depending on input
 # bin() convert an integer to a binary string
 
+# global variables
+# add a global statement to make a variable global
+# global someVariable
+
+globalVar = 18
+def change():
+    global globalVar
+    globalVar = 101
+    print(globalVar)
+
+change() # 101
+print(globalVar) # 101
+    
 ''' ------------------ Assignment ------------------------ '''
 # identifier (name, variable) = value (object)
 numbers = [1,2,3]
@@ -497,3 +515,4 @@ nlist = [3,5,2]
 auglist(nlist,fnum)
 print(nlist) # [3,5,2,101] mutable parameter. nlist and l are aliases to the same object
 print(fnum) # 8 fnum parameter is local to the function
+
