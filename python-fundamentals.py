@@ -678,9 +678,41 @@ print(sortA) # ['TWO', 'two', 'ONE', 'one']
 print()
 
 
-''' ------------------ File Operations ------------------ '''
+print(''' ------------------ File Operations ------------------ ''')
+# create output file
+output = open('output.txt', 'w') 
+
+# write a string of characters to file
+output.write('hello world')
+
+# write all strings in a list to file
+op = ['hello', 'world']
+output.writelines(op)
+
+# create input file
+# open(data file [, 'r'])
+input = open('data.txt', 'r')
+
+# read file into a single string
+# accepts optional character limit argument
+# input.read([n])
+print(input.read(5)) # read first 5 characters
+print(input.read()) # read remaining data
+print()
+
+# read next line (including \n) into a string
+input = open('data.txt')
+print(input.readline())
+
+# read entire file into list of line strings (including \n)
+inputList = input.readlines()
+print(inputList)
 
 # print to file instead of screen
 saveFile = open('saved.txt', 'w')
 print('save me...', file=saveFile)
 print('thanks!', file=saveFile)
+saveFile.close()
+
+input = open('saved.txt', 'r')
+print(input.read())
