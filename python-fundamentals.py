@@ -16,7 +16,7 @@ Facts
 # special None datatype (similar to null in java/c++)
 
 
-''' ------------------ Sequences ------------------ '''
+print(''' ------------------ Sequences ------------------ ''')
 # an ordered collection of values
 # are iterables
 # string, list, tuple, range
@@ -53,12 +53,11 @@ print(mseq) # [2, 44, 2, 22, 88, 7]
 del mseq[2:4]
 print(mseq) # [2, 44, 88, 7]
 
-''' ------------------ Strings ------------------ '''
+print()
+
+print(''' ------------------ Strings ------------------ ''')
 # are immutable
 # are iterables
-
-print()
-print('----- Strings -----')
 
 # single/double quotes
 str1 = 'hello'
@@ -133,7 +132,8 @@ print('    ...loading'.lstrip()) # ...loading
 
 print()
 
-''' ------------------ Lists ------------------ '''
+
+print(''' ------------------ Lists ------------------ ''')
 # like an array
 # zero-indexed
 # supports negative indices
@@ -191,15 +191,18 @@ ltemp = [3,590,-89,123]
 ltemp.sort(reverse=True)
 print(ltemp) # [590, 123, 3, -89]
 
-''' ------------------ List Comprehensions ------------------ '''
+print()
+
+
+print(''' ------------------ List Comprehensions ------------------ ''')
 # compact way for creating lists
 # general form has three components
 # list = [(1)expression using a value from an iterable (2)for iterable (3)if conditions]
-print()
-print('----- List Comprehenstion -----')
+
 # create list of even numbers between 2 and 14
 listComp = [i for i in range(2,15) if i%2 == 0]
 print(listComp)
+
 print()
 
 
@@ -213,7 +216,7 @@ newTuple = () # literal
 oneTuple = (55,) 
 
 
-''' ------------------ Mappings ------------------ '''
+print(''' ------------------ Mappings/Dictionaries ------------------ ''')
 # dictionary
 # key/value pair
 # unordered (order is not guaranteed)
@@ -225,6 +228,42 @@ dictionaryInitialize = {'my key': 8, 999: 1}
 
 # add pair
 newDictionary['key'] = 10
+newDictionary['color'] = 'blue'
+
+# number of items in dictionary
+print(len(newDictionary)) # 1
+
+# return value using key
+# throws KeyError if key not in map
+print(newDictionary['key']) # 10
+
+# assignment value to key
+newDictionary['color'] = 'red'
+print(newDictionary['color']) # red
+
+# delete key/value pair
+# throws KeyError if key not in map
+del newDictionary['color']
+print(newDictionary) # {'key': 10}
+
+# test for key membership in map
+# returns boolean value
+# key in d
+# key not in d
+print('key is in dictioanry:', 'key' in newDictionary) # True
+print('color is not in dictionary:', 'color' not in newDictionary) # True
+
+# return a shallow copy of a dictionary
+newNewDictionary = newDictionary.copy()
+print('old', newDictionary)
+print('new', newNewDictionary)
+
+newDictionary['key'] = 999
+print('old', newDictionary)
+print('new', newNewDictionary)
+
+# return a view object of a dictionary's key/value pairs
+print(newDictionary.items())
 
 # get list of keys
 print(dictionaryInitialize.keys())
@@ -243,8 +282,21 @@ print(dictKeys)
 dictValues = list(dictionaryInitialize.values())
 print(dictValues)
 
+# if key is in the dictionary, remove it and return its value, else return default
+# throws KeyError if default is not given and key is not in the dictionary
+# dict.pop(key, default)
+print('removed key, its value is:', newDictionary.pop('key')) # 999
+print(newDictionary.pop('color', 'key does not exist')) # key does not exist
 
-''' ------------------ Sets ------------------'''
+# remove all items from the dictionary
+newNewDictionary['color'] = 'aqua'
+print(newNewDictionary)
+newNewDictionary.clear()
+print(newNewDictionary)
+print()
+
+
+print(''' ------------------ Sets ------------------''')
 # unordered collection of unique elements (no duplicates)
 # can only contain immutable types
 # good for checking where an element is contained in the set (membership)
@@ -294,6 +346,8 @@ print(1 not in newSet) # True
 # find number of elements in set
 print('set has', len(newSet), 'element(s)')
 
+print()
+
 
 ''' ------------------- Comments -------------------- '''
 # Single line
@@ -309,7 +363,7 @@ Or
 use double quotation marks
 """
 
-''' ------------------ Code continuation ---------------------'''
+print(''' ------------------ Code continuation ---------------------''')
 # Use backslash to continue statement on next line
 num = 132 \
     + 5
@@ -318,8 +372,10 @@ print(3,
     4,
     5)
 
+print()
 
-''' ------------------ Variables ------------------------ '''
+
+print(''' ------------------ Variables ------------------------ ''')
 # get memory address
 memAddress = 'mem'
 print('memory address:', id(memAddress))
@@ -361,8 +417,11 @@ def change():
 
 change() # 101
 print(globalVar) # 101
+
+print()
     
-''' ------------------ Assignment ------------------------ '''
+
+print(''' ------------------ Assignment ------------------ ''')
 # identifier (name, variable) = value (object)
 numbers = [1,2,3]
 
@@ -387,7 +446,10 @@ print(temp, atemp) # 198 99
 d1,d2,d3 = 99,88,77
 print(d1,d2,d3) # 99 88 77
 
-''' ------------------ Instantiation ------------------ '''
+print()
+
+
+print(''' ------------------ Instantiation ------------------ ''')
 # Creating a new instance of a class
 # With class constructor
 a = int(5)
@@ -396,8 +458,10 @@ print('an integer', a)
 b = 6
 print('another integer', b)
 
+print()
 
-''' ------------------ Expressions ------------------ '''
+
+print(''' ------------------ Expressions ------------------ ''')
 # has a side effect
 # has value
 
@@ -414,6 +478,8 @@ swap2 = 'red'
 swap1,swap2 = swap2,swap1
 print(swap1, swap2) # red green
 
+print()
+
 
 ''' ------------------ Input ------------------ '''
 # input() get input from user. returns a string
@@ -429,7 +495,7 @@ print(swap1, swap2) # red green
 # of the first operand
 
 
-''' ------------------ Equality Operators ------------------ '''
+print(''' ------------------ Equality Operators ------------------ ''')
 # is same identity. checks if aliases are the same object
 # is not different identity
 # == equivalent. checks for general equivalence
@@ -441,6 +507,8 @@ c = [5]
 print('check identity between a and b:', a is b) # True
 print('check identity between a and c:', a is c) # False
 print('check equity between a and c:', a == c) # True
+
+print()
 
 
 ''' ------------------ Comparison Operators ------------------ '''
@@ -469,7 +537,7 @@ print('check equity between a and c:', a == c) # True
 # >> shift bits right, filling in with sign bit
 
 
-''' ------------------ Control Statements ------------------ '''
+print(''' ------------------ Control Statements ------------------ ''')
 # if statement
 if 1 < 6:
     print(True)
@@ -520,8 +588,10 @@ for i in range(1,5,3):
 # break statement exits loop
 # continue statement ends current and returns to top of loop
 
+print()
 
-''' ------------------ Modules ------------------ '''
+
+print(''' ------------------ Modules ------------------ ''')
 # predefined file with functions/methods
 # have to import (loads) them in to use
 # there are three ways to import modules
@@ -546,8 +616,10 @@ print(sqrt(9))
 
 # you can create your own functions and modules
 
+print()
 
-''' ------------------ Functions ------------------ '''
+
+print(''' ------------------ Functions ------------------ ''')
 # creating a function
 # def function_name([parameter list]):
 #   code block
@@ -562,8 +634,10 @@ print(addtwo(5,10)) # 5
 # can terminate the function with just the return statement without returning a value (or you can have an implicit return by leaving
 # out the return statement and the function just "falls off" the last statement and returns to the caller)
 
+print()
 
-''' ------------------ Functions/Class Methods ------------------ '''
+
+print(''' ------------------ Functions/Class Methods ------------------ ''')
 # accessors
 # returns information about the object but do not change its state
 
@@ -585,7 +659,10 @@ auglist(nlist,fnum)
 print(nlist) # [3,5,2,101] mutable parameter. nlist and l are aliases to the same object
 print(fnum) # 8 fnum parameter is local to the function
 
-''' ------------------ built-in sort function ------------------ '''
+print()
+
+
+print(''' ------------------ built-in sort function ------------------ ''')
 # l.sort([key=None, reverse=False])
 # takes two optional arguments:
 # key specifies a function of one argument that is applied to the list elment before the comparison is made
@@ -597,3 +674,13 @@ sortA.sort(key=str.lower)
 print(sortA) # ['ONE', 'one', 'TWO', 'two']
 sortA.sort(key=str.lower, reverse=True)
 print(sortA) # ['TWO', 'two', 'ONE', 'one']
+
+print()
+
+
+''' ------------------ File Operations ------------------ '''
+
+# print to file instead of screen
+saveFile = open('saved.txt', 'w')
+print('save me...', file=saveFile)
+print('thanks!', file=saveFile)
