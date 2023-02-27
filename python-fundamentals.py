@@ -106,7 +106,30 @@ print('1'.join(['b','y','e'])) # b1y1e
 # return a copy of the string with all occurrences of the old substring with the new substring
 # accepts optional count which is the number of occurrences to replace
 # str.replace(old, new, count)
-print('newnewnew'.replace('new','old',1))
+print('newnewnew'.replace('new','old',2)) # oldoldnew
+
+# return a list of the words in the string, using sep as the delimiter string
+# if sep is not specified, whitespace are regarded as separators
+# maxsplit can be defined to limit the number of splits
+# sep and maxsplit are optional
+# str.split(sep, maxsplit)
+print('1#2#3'.split('#', 1)) # ['1', '2#3']
+print('h    e   l  lo'.split()) # ['h', 'e', 'l', 'lo']
+
+multiline = '''hello
+good
+bye
+'''
+# return a list of the lines in the string, breaking at line boundaries
+print(multiline.splitlines()) # ['hello', 'good', 'bye']
+
+# return a copy of string with trailing/leading characters removed
+# accepts optioanl chars argument that specifies the set of characters to be removed
+# if chars is not specified, whitespace is removed
+# str.rstrip([chars]) remove trailing characters
+# str.lstrip([chars]) remove leading characters
+print('waiting...   '.rstrip(' .')) # waiting
+print('    ...loading'.lstrip()) # ...loading
 
 print()
 
