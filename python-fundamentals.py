@@ -55,6 +55,10 @@ print(mseq) # [2, 44, 88, 7]
 
 ''' ------------------ Strings ------------------ '''
 # are immutable
+# are iterables
+
+print()
+print('----- Strings -----')
 
 # single/double quotes
 str1 = 'hello'
@@ -76,6 +80,35 @@ print(str3)
 print(3*"hey!") # hey!hey!hey!
 # 0*"string" returns an empty string
 print(0*'goodbye')
+
+# transform to uppercase/lowercase
+print('upper'.upper())
+print('LOWER'.lower())
+
+# returns the number of occurrences of a substring
+# accepts optional start/end arguments
+# someStr.count(substring, start, end)
+print('end occurs', 'endendend'.count('end'), 'time(s) in endendend')
+
+# find first occurrence of substring and returns its index
+# accepts optional start/end arguments
+# returns -1 if substring is not found
+substring = 'end'
+substringLength = len(substring)
+subIndex = 'never ending story'.find(substring)
+print('end can be found at index {} to {}'.format(str(subIndex), str(substringLength + subIndex)))
+
+# return a string which is the concatenation of the strings in a iterable
+# the seprator between elements is the string providing the method
+# str.join(iterable)
+print('1'.join(['b','y','e'])) # b1y1e
+
+# return a copy of the string with all occurrences of the old substring with the new substring
+# accepts optional count which is the number of occurrences to replace
+# str.replace(old, new, count)
+print('newnewnew'.replace('new','old',1))
+
+print()
 
 ''' ------------------ Lists ------------------ '''
 # like an array
@@ -134,6 +167,17 @@ print(ltemp) # [3, 11111, '1']
 ltemp = [3,590,-89,123]
 ltemp.sort(reverse=True)
 print(ltemp) # [590, 123, 3, -89]
+
+''' ------------------ List Comprehensions ------------------ '''
+# compact way for creating lists
+# general form has three components
+# list = [(1)expression using a value from an iterable (2)for iterable (3)if conditions]
+print()
+print('----- List Comprehenstion -----')
+# create list of even numbers between 2 and 14
+listComp = [i for i in range(2,15) if i%2 == 0]
+print(listComp)
+print()
 
 
 ''' ------------------ Tuples ------------------ '''
@@ -224,6 +268,8 @@ print(8 in newSet) # True
 print(1 in newSet) # False
 # x not in s test x for non-membership in s
 print(1 not in newSet) # True
+# find number of elements in set
+print('set has', len(newSet), 'element(s)')
 
 
 ''' ------------------- Comments -------------------- '''
@@ -470,10 +516,10 @@ from math import *
 print(sqrt(9))
 
 # use dir() to get list of functions available
-print(dir(math))
+# print(dir(math))
 
 # use help() describes what each function does
-print(help(math))
+# print(help(math))
 
 # you can create your own functions and modules
 
@@ -516,3 +562,15 @@ auglist(nlist,fnum)
 print(nlist) # [3,5,2,101] mutable parameter. nlist and l are aliases to the same object
 print(fnum) # 8 fnum parameter is local to the function
 
+''' ------------------ built-in sort function ------------------ '''
+# l.sort([key=None, reverse=False])
+# takes two optional arguments:
+# key specifies a function of one argument that is applied to the list elment before the comparison is made
+# reverse specifies that the list should be in reverse order
+sortA = ['ONE','two','one','TWO']
+sortA.sort()
+print(sortA) # ['ONE', 'TWO', 'one', 'two']
+sortA.sort(key=str.lower)
+print(sortA) # ['ONE', 'one', 'TWO', 'two']
+sortA.sort(key=str.lower, reverse=True)
+print(sortA) # ['TWO', 'two', 'ONE', 'one']
