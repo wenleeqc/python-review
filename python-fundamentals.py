@@ -188,8 +188,19 @@ print(ltemp) # [3, 11111, '1']
 # l.sort(cmpfunc,keyf,reverse)
 # sort items of l in place. cmpfunc is a comparison. keyf is a key function. reverse is a flag that sorts the list in reverse order
 ltemp = [3,590,-89,123]
-ltemp.sort(reverse=True)
-print(ltemp) # [590, 123, 3, -89]
+
+print(''' ------------------ built-in sort function ------------------ ''')
+# l.sort([key=None, reverse=False])
+# takes two optional arguments:
+# key specifies a function of one argument that is applied to the list elment before the comparison is made
+# reverse specifies that the list should be in reverse order
+sortA = ['ONE','two','one','TWO']
+sortA.sort()
+print(sortA) # ['ONE', 'TWO', 'one', 'two']
+sortA.sort(key=str.lower)
+print(sortA) # ['ONE', 'one', 'TWO', 'two']
+sortA.sort(key=str.lower, reverse=True)
+print(sortA) # ['TWO', 'two', 'ONE', 'one']
 
 print()
 
@@ -483,6 +494,7 @@ print()
 
 ''' ------------------ Input ------------------ '''
 # input() get input from user. returns a string
+# cast numeric string using int(), float(), eval() constructors
 
 
 ''' ------------------ Logical Operators ------------------ '''
@@ -662,22 +674,6 @@ print(fnum) # 8 fnum parameter is local to the function
 print()
 
 
-print(''' ------------------ built-in sort function ------------------ ''')
-# l.sort([key=None, reverse=False])
-# takes two optional arguments:
-# key specifies a function of one argument that is applied to the list elment before the comparison is made
-# reverse specifies that the list should be in reverse order
-sortA = ['ONE','two','one','TWO']
-sortA.sort()
-print(sortA) # ['ONE', 'TWO', 'one', 'two']
-sortA.sort(key=str.lower)
-print(sortA) # ['ONE', 'one', 'TWO', 'two']
-sortA.sort(key=str.lower, reverse=True)
-print(sortA) # ['TWO', 'two', 'ONE', 'one']
-
-print()
-
-
 print(''' ------------------ File Operations ------------------ ''')
 # create output file
 output = open('output.txt', 'w') 
@@ -716,3 +712,7 @@ saveFile.close()
 
 input = open('saved.txt', 'r')
 print(input.read())
+
+
+
+# walrus operator
