@@ -133,6 +133,15 @@ print('    ...loading'.lstrip()) # ...loading
 print()
 
 
+print(''' ------------------ String Formatting ------------------ ''')
+
+temp_str1 = 'chocolate'
+temp_str2 = 'ice cream'
+print(f'I love {temp_str1} and {temp_str2}!')
+
+print()
+
+
 print(''' ------------------ Lists ------------------ ''')
 # like an array
 # zero-indexed
@@ -712,7 +721,3 @@ saveFile.close()
 
 input = open('saved.txt', 'r')
 print(input.read())
-
-
-
-# walrus operator
