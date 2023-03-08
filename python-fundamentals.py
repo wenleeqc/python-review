@@ -803,3 +803,24 @@ try:
 except:
     print('oops!') # throws exception if division by zero
     print('now in except block')
+
+print()
+
+
+print(''' ------------------ Iterators ------------------ ''')
+# An iterable is an object that produces an iterator via the syntax iter(object)
+# list, tuple, and set are iterables types
+
+# An iterator is an object that manages an iteration through a series of values
+# use next(iterator) to get next value in series
+# supports lazy evaluation, generates next value as needed
+
+iData = [9,8,7,6,5]
+iIterable = iter(iData)
+print(iIterable) # list_iterator object
+print(next(iIterable)) # 9
+
+print()
+
+
+print(''' ------------------ Generators ------------------ ''')
