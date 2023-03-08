@@ -683,6 +683,28 @@ print(fnum) # 8 fnum parameter is local to the function
 print()
 
 
+print(''' ------------------ Built-In Functions ------------------ ''')
+# return absolute value
+print('absolute value', abs(-4))
+
+# return min/max element
+bifIterable = [5, -2, 3, 1, 9999, 8, 9, 0]
+print('min', min(bifIterable))
+print('max', max(bifIterable))
+
+# return sorted list of iterable
+print('sorted', sorted(bifIterable))
+
+# return type/class of object
+print('int', type(7))
+print('float', type(0.9))
+print('str', type('hey'))
+print('list', type(bifIterable))
+print('NoneType', type(None))
+
+print()
+
+
 print(''' ------------------ File Operations ------------------ ''')
 # create output file
 output = open('output.txt', 'w') 
