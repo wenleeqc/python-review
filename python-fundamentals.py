@@ -687,6 +687,9 @@ print(''' ------------------ Built-In Functions ------------------ ''')
 # return absolute value
 print('absolute value', abs(-4))
 
+# return nearest integer value
+print('round', round(2.6))
+
 # return min/max element
 bifIterable = [5, -2, 3, 1, 9999, 8, 9, 0]
 print('min', min(bifIterable))
@@ -694,6 +697,43 @@ print('max', max(bifIterable))
 
 # return sorted list of iterable
 print('sorted', sorted(bifIterable))
+
+# return sum of elements in the iterable
+print('sum', sum(bifIterable))
+
+# return unicode given character
+print('unicode of A', ord('A'))
+
+# return character given unicode
+print('character of 65', chr(65))
+
+# return unique integer identity of object
+print(id(bifIterable))
+print(id(6789))
+
+# return iterator with function applied to each element
+# iterable arguments are inputs for the function
+# number of iterables given much match the number of function arguments
+# map(function, iter1, iter2, ...)
+def bif_print(bifIterable):
+    for e in bifIterable:
+        print(e)
+
+def bif_add100(a):
+    return a + 100
+
+def bif_subtract(a,b):
+    return a - b
+
+bifMap1 = map(bif_add100, bifIterable)
+bif_print(bifMap1)
+print()
+
+bifMap2 = map(bif_subtract, [9, 83, 575, 0], [4, 5, 232, 17])
+bif_print(bifMap2)
+
+# determine if object is an instance of the class
+print('is int', isinstance(101, int))
 
 # return type/class of object
 print('int', type(7))
