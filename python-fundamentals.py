@@ -783,3 +783,23 @@ saveFile.close()
 
 input = open('saved.txt', 'r')
 print(input.read())
+
+
+print(''' ------------------ Exception Handling ------------------ ''')
+# try/except/finally control structure
+# can define multiple except clauses
+# try:
+#   code may throw an error
+# except:
+#   run if error is thrown
+# finally:
+#   code will always run
+
+enum1 = 9
+enum2 = 0
+try:
+    print('hey i\'m in try block, going to try something...')
+    print(enum1/enum2)
+except:
+    print('oops!') # throws exception if division by zero
+    print('now in except block')
