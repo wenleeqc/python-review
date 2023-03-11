@@ -823,4 +823,3 @@ print(next(iIterable)) # 9
 print()
 
 
-print(''' ------------------ Generators ------------------ ''')
