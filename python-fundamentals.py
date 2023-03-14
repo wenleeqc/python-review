@@ -466,6 +466,32 @@ print(temp, atemp) # 198 99
 d1,d2,d3 = 99,88,77
 print(d1,d2,d3) # 99 88 77
 
+print(''' ------------------ Packing and Unpacking Sequences ------------------ ''')
+# automatic packing of a tuple
+packing = 1,2,3,4
+print(packing) # (1, 2, 3, 4)
+
+# returning multiple values
+def returnMultipleValues(x,y):
+    return x+1, y+2
+
+packingReturn = returnMultipleValues(5,10)
+print(packingReturn) # (6, 12)
+
+# unpacking a sequence
+p1, p2, p3, p4 = packing
+print(p1, p2, p3, p4) # 1 2 3 4
+
+# simultaneous assignment
+one, two, three = 1, 2, 3
+print(one, two, three) # 1 2 3
+
+# swapping values
+swap1 = 999
+swap2 = 1
+swap1, swap2 = swap2, swap1
+print(swap1, swap2) # 1 999
+
 print()
 
 
@@ -822,4 +848,15 @@ print(next(iIterable)) # 9
 
 print()
 
+
+print(''' ------------------ Generators ------------------ ''')
+# creates iterators
+# uses yield statement to return next element in the series
+
+def factors(num):
+    for i in range(1, num+1):
+        if num % i == 0:
+            yield i
+for factor in factors(50):
+    print(factor)
 
